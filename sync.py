@@ -21,8 +21,8 @@ if os.path.isfile(pidfile):
     sys.exit()
 file(pidfile, 'w').write(pid)
 try:
-    dirdest = "/mnt/dadosufvcredipa01/share"
-    dirlocal = "/mnt/dadosufvcredi01/share"
+    dirdest = "/mnt/dadosufvcredipa01/share/"
+    dirlocal = "/mnt/dadosufvcredi01/share/"
     dirfinal = "ssh://192.168.22.251:5252//" + dirdest
     param1 = "/usr/local/bin/unison  -perms 0 -logfile /var/log/log.unisync -auto -prefer"
     diretorios=[
