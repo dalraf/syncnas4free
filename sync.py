@@ -23,7 +23,7 @@ def execute(cmd):
         print "Erro ao executa " + cmd + "\n o erro foi\n" + output + erro + str(rc)
 
 pid = str(os.getpid())
-pidfile = "/tmp/mydaemon.pid"
+pidfile = "/tmp/unisonsync.pid"
 
 if os.path.isfile(pidfile):
     print "%s arquivo existe, saindo..." % pidfile
