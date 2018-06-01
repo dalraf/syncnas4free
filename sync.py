@@ -26,7 +26,7 @@ try:
     dirfinal = "ssh://192.168.22.251:5252//" + dirdest
     param1 = "/usr/local/bin/unison  -perms 0 -logfile /var/log/log.unisync -auto -prefer"
     diretorios=[
-        'DOCUMENTOS\\ ABERTURA\\ DE\\ CONTAS',
+        'DOCUMENTOS\\\\ ABERTURA\\\\ DE\\\\ CONTAS',
         'SEGUROS',
         ]
 
