@@ -5,9 +5,9 @@ import os
 import sys
 from subprocess import run, PIPE
 
-dirdest = "/mnt/dadosufvcredipa01/share/"
-dirlocal = "/mnt/dadosufvcredi01/sharenew/"
-dirfinal = "ssh://192.168.22.251:5252//" + dirdest
+dirdest = "/mnt/dadoscoopemg01/share/"
+dirlocal = "/mnt/dadoscoopemgsede/share/"
+dirfinal = "ssh://192.168.102.252:5252//" + dirdest
 
 logfile = open("/var/log/log.unisync", "a")
 
@@ -16,15 +16,20 @@ unison_env = os.environ.copy()
 
 
 diretorios=[
-    'DOCUMENTOS ABERTURA DE CONTAS',
-    'SEGUROS',
+    'GERENCIA_CONTROLE_FINANCEIRO/Gerência_de_Controles\ Financeiros/CARTÃO\ DE\ ASSINATURA\ -\ COOPERADOS',
+    'CONTROLE_INTERNO/PRODUCAO\ ATENDIMENTO',
+    'GERENCIA_CONTROLE_FINANCEIRO/CAPITAL\ SOCIAL\ -\ RESGATES\ EVENTUAIS/Registros\ Resgates',
+    'GERENCIA_RELACIONAMENTO_NEGOCIO/Gerencia_de_\ Contas/Produto\ e\ Serviços/Sicoob\ consórcio/',
+    'GERENCIA_RELACIONAMENTO_NEGOCIO/ATENDIMENTO/SILVANE',
+    'GERENCIA_RELACIONAMENTO_NEGOCIO/Controle\ de\ Agenda\ \ e\ banco\ de\ horas\ do\ setor/Banco\ de\ Horas/', 
+    'scanner',
     ]
 
 def execute(cmd):
     print ("Executando " + cmd + "\n")
     saida = run(cmd, env=unison_env, shell=True, stdout=logfile, stderr=logfile)
     if saida.returncode  > 0:
-        print ( "Erro ao executa " + cmd + "\n o erro foi\n" + output + erro + str(rc) )
+        print ( "Erro ao executa " + cmd + "\n\n" )
 
 pid = str(os.getpid())
 pidfile = "/tmp/unisonsync.pid"
